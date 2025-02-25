@@ -1,2 +1,2 @@
 import 'bootstrap';
-import '.app/list-products.scss';
+import './list-products.scss';

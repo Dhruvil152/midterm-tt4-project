@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Midterm TT4 - Simulation</title>
+    <title>Add Product</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="global.css">
 </head>
 
 <body>
     <div class="d-flex" id="wrapper">
-        <!-- Sidebar-->
+        <!-- Sidebar -->
         <div class="border-end bg-white" id="sidebar-wrapper">
             <div class="sidebar-heading border-bottom bg-light">Start Bootstrap</div>
             <div class="list-group list-group-flush">
@@ -20,16 +20,17 @@
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" href="add-products.html">Add Product</a>
             </div>
         </div>
-        <!-- Page content wrapper-->
+        <!-- Page content wrapper -->
         <div id="page-content-wrapper">
-            <!-- Top navigation-->
+            <!-- Top navigation -->
             <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
                 <div class="container-fluid">
                     <button class="btn btn-primary" id="sidebarToggle">Toggle Menu</button>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation"><span
-                            class="navbar-toggler-icon"></span></button>
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
                             <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
@@ -48,34 +49,46 @@
                     </div>
                 </div>
             </nav>
-            <!-- Page content-->
+            <!-- Page content -->
             <div id="content" class="container-fluid p-5">
-                <h1 class="mt-4">Simple Sidebar</h1>
-                <p>The starting state of the menu will appear collapsed on smaller screens, and will appear
-                    non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
-                <p>
-                    Make sure to keep all page content within the
-                    <code>#page-content-wrapper</code>
-                    . The top navbar is optional, and just for demonstration. Just create an element with the
-                    <code>#sidebarToggle</code>
-                    ID which will toggle the menu when clicked.
-                </p>
-                <div class="alert alert-primary" role="alert">
-                    Here's an example of how to assemble your products. Pay close attention to all the details,
-                    especially the dependencies, as they are crucial for the proper setup. Although this is not
-                    described in the documentation, it would show attention to detail if you remove this example from
-                    the homepage after use. You can simply comment it out. Don’t forget to do the same for the
-                    JavaScript code to avoid any errors due to missing dependencies.
-                </div>
+                <h1 class="mt-4">Add Product</h1>
+                <p>Use the form below to add a new product to the store.</p>
 
-                <div class="alert alert-warning" role="alert">
-                    Create your own layout, don't just copy this example, use your creativity.
-                </div>
+                <!-- Add Product Form -->
+                <form>
+                    <!-- Photo Field -->
+                    <div class="mb-3">
+                        <label for="productPhoto" class="form-label">Photo</label>
+                        <input type="file" class="form-control" id="productPhoto" accept="image/*">
+                    </div>
 
-                <h2>Product list example</h2>
-                <div id="products" class="d-flex gap-2">
-                    <!-- Products -->
-                </div>
+                    <!-- Title Field -->
+                    <div class="mb-3">
+                        <label for="productTitle" class="form-label">Title</label>
+                        <input type="text" class="form-control" id="productTitle" placeholder="Enter product title" required>
+                    </div>
+
+                    <!-- Description Field -->
+                    <div class="mb-3">
+                        <label for="productDescription" class="form-label">Description</label>
+                        <textarea class="form-control" id="productDescription" rows="3" placeholder="Enter product description (max 100 characters)" maxlength="100" required></textarea>
+                    </div>
+
+                    <!-- Price Field -->
+                    <div class="mb-3">
+                        <label for="productPrice" class="form-label">Price</label>
+                        <input type="number" class="form-control" id="productPrice" placeholder="Enter product price" step="0.01" required>
+                    </div>
+
+                    <!-- Quantity Field -->
+                    <div class="mb-3">
+                        <label for="productQuantity" class="form-label">Quantity</label>
+                        <input type="number" class="form-control" id="productQuantity" placeholder="Enter product quantity" required>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn btn-primary">Add Product</button>
+                </form>
             </div>
         </div>
     </div>
